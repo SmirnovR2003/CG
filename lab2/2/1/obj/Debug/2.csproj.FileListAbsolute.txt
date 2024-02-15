@@ -1,0 +1,10 @@
+C:\roman\CG\lab2\2\1\obj\Debug\2.csproj.AssemblyReference.cache
+C:\roman\CG\lab2\2\1\obj\Debug\_2.Form1.resources
+C:\roman\CG\lab2\2\1\obj\Debug\_1.Properties.Resources.resources
+C:\roman\CG\lab2\2\1\obj\Debug\2.csproj.GenerateResource.cache
+C:\roman\CG\lab2\2\1\obj\Debug\2.csproj.CoreCompileInputs.cache
+C:\roman\CG\lab2\2\1\obj\Debug\1.exe
+C:\roman\CG\lab2\2\1\obj\Debug\1.pdb
+C:\roman\CG\lab2\2\1\bin\Debug\1.exe.config
+C:\roman\CG\lab2\2\1\bin\Debug\1.exe
+C:\roman\CG\lab2\2\1\bin\Debug\1.pdb

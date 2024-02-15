@@ -1,0 +1,10 @@
+C:\roman\CG\lab2\1\1\obj\Release\1.csproj.AssemblyReference.cache
+C:\roman\CG\lab2\1\1\obj\Release\_1.Form1.resources
+C:\roman\CG\lab2\1\1\obj\Release\_1.Properties.Resources.resources
+C:\roman\CG\lab2\1\1\obj\Release\1.csproj.GenerateResource.cache
+C:\roman\CG\lab2\1\1\obj\Release\1.csproj.CoreCompileInputs.cache
+C:\roman\CG\lab2\1\1\bin\Release\1.exe.config
+C:\roman\CG\lab2\1\1\bin\Release\1.exe
+C:\roman\CG\lab2\1\1\bin\Release\1.pdb
+C:\roman\CG\lab2\1\1\obj\Release\1.exe
+C:\roman\CG\lab2\1\1\obj\Release\1.pdb
