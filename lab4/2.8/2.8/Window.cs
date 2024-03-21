@@ -9,7 +9,6 @@ using System.Drawing;
 
 namespace _2._8
 {
-    //разделить окно и фигуру
     internal class Window : GameWindow
     {
 
@@ -17,7 +16,7 @@ namespace _2._8
         private float _mouseX = 0;
         private float _mouseY = 0;
 
-        private Torus shape = new Torus();
+        private readonly Torus shape = new Torus();
 
 
 
@@ -37,7 +36,6 @@ namespace _2._8
 
             GL.Enable(EnableCap.DepthTest);
 
-            //разробаться спараметрами
             GL.Light(LightName.Light1, LightParameter.Position, new Vector4(0f, 10f, 0f, 0f));
             GL.Light(LightName.Light1, LightParameter.Diffuse, new Vector4(1f, 1f, 1f, 1f));
             GL.Light(LightName.Light1, LightParameter.Ambient, new Vector4(0.2f, 0.2f, 0.2f, 1f));
@@ -57,7 +55,7 @@ namespace _2._8
             
             GL.LoadIdentity();
             var matrix = Matrix4.LookAt(
-                0f, 0f, 20f,
+                0f, 0f, 25f,
                 0f, 0f, 0f,
                 0, 1, 0);
             GL.LoadMatrix(ref matrix);
@@ -195,7 +193,7 @@ namespace _2._8
             GL.Frustum(
                 -frustumWidth * 0.5, frustumWidth * 0.5, // left, right
                 -frustumHeight * 0.5, frustumHeight * 0.5, // top, bottom
-                frustumSize * 0.5, frustumSize * 20 // znear, zfar
+                frustumSize * 0.5, frustumSize * 30 // znear, zfar
                 );
         }
 
