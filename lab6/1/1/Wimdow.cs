@@ -24,7 +24,6 @@ namespace _1._2
 
             GL.ClearColor(0.5f, 0.5f, 0.5f, 1f);
 
-            //GL.ClearColor(Color.White);
             GL.Enable(EnableCap.Texture2D);
 
             GL.Enable(EnableCap.DepthTest);
@@ -41,7 +40,7 @@ namespace _1._2
             GL.Enable(EnableCap.Normalize);
 
             var matrix = Matrix4.LookAt(
-                0f, 300f, 350f,
+                0f, 350f, 200f,
                 0f, 0f, 0f,
                 0, 1, 0);
             GL.LoadMatrix(ref matrix);

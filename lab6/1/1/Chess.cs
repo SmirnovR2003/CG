@@ -25,7 +25,7 @@ namespace _1
         Model pawn;
         Model board;
 
-        Timer timer;
+        //Timer timer;
 
         Color4 blackColor = new Color4(0.2f, 0.2f, 0.2f, 1f);
         float quadSize = 40f;
@@ -33,10 +33,10 @@ namespace _1
 
         public Chess() 
         {
-            timer = new Timer();
-            timer.Interval = 100;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            //timer = new Timer();
+            //timer.Interval = 100;
+            //timer.Elapsed += Timer_Elapsed;
+            //timer.Start();
 
             rook = new Model();
             rook.LoadModel("models/Rook.obj");
@@ -60,10 +60,10 @@ namespace _1
             board.LoadModel("models/ChessBoard.obj");
         }
 
-        private void Timer_Elapsed(object? sender, ElapsedEventArgs e)
-        {
-            //Console.WriteLine("Таймер сработал: " + DateTime.Now);
-        }
+        //private void Timer_Elapsed(object? sender, ElapsedEventArgs e)
+        //{
+        //    //Console.WriteLine("Таймер сработал: " + DateTime.Now);
+        //}
 
         public void Draw()
         {

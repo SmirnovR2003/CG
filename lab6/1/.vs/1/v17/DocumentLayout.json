@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\roman\\CG\\lab6\\1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BF8C0A5F-E0FE-4DBF-976F-7BC51DC061AF}|1\\1.csproj|c:\\roman\\cg\\lab6\\1\\1\\wimdow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF8C0A5F-E0FE-4DBF-976F-7BC51DC061AF}|1\\1.csproj|solutionrelative:1\\wimdow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF8C0A5F-E0FE-4DBF-976F-7BC51DC061AF}|1\\1.csproj|c:\\roman\\cg\\lab6\\1\\1\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF8C0A5F-E0FE-4DBF-976F-7BC51DC061AF}|1\\1.csproj|solutionrelative:1\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF8C0A5F-E0FE-4DBF-976F-7BC51DC061AF}|1\\1.csproj|c:\\roman\\cg\\lab6\\1\\1\\chess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF8C0A5F-E0FE-4DBF-976F-7BC51DC061AF}|1\\1.csproj|solutionrelative:1\\chess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF8C0A5F-E0FE-4DBF-976F-7BC51DC061AF}|1\\1.csproj|c:\\roman\\cg\\lab6\\1\\1\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF8C0A5F-E0FE-4DBF-976F-7BC51DC061AF}|1\\1.csproj|solutionrelative:1\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF8C0A5F-E0FE-4DBF-976F-7BC51DC061AF}|1\\1.csproj|c:\\roman\\cg\\lab6\\1\\1\\wimdow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF8C0A5F-E0FE-4DBF-976F-7BC51DC061AF}|1\\1.csproj|solutionrelative:1\\wimdow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF8C0A5F-E0FE-4DBF-976F-7BC51DC061AF}|1\\1.csproj|c:\\roman\\cg\\lab6\\1\\1\\materialloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,28 +30,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Model.cs",
-              "DocumentMoniker": "C:\\roman\\CG\\lab6\\1\\1\\Model.cs",
-              "RelativeDocumentMoniker": "1\\Model.cs",
-              "ToolTip": "C:\\roman\\CG\\lab6\\1\\1\\Model.cs",
-              "RelativeToolTip": "1\\Model.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T15:29:19.778Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -61,9 +44,22 @@
               "RelativeDocumentMoniker": "1\\MaterialLoader.cs",
               "ToolTip": "C:\\roman\\CG\\lab6\\1\\1\\MaterialLoader.cs",
               "RelativeToolTip": "1\\MaterialLoader.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAWAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAC8AAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-05T06:54:24.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Model.cs",
+              "DocumentMoniker": "C:\\roman\\CG\\lab6\\1\\1\\Model.cs",
+              "RelativeDocumentMoniker": "1\\Model.cs",
+              "ToolTip": "C:\\roman\\CG\\lab6\\1\\1\\Model.cs",
+              "RelativeToolTip": "1\\Model.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAFIAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T15:29:19.778Z",
               "EditorCaption": ""
             },
             {
@@ -74,20 +70,20 @@
               "RelativeDocumentMoniker": "1\\Chess.cs",
               "ToolTip": "C:\\roman\\CG\\lab6\\1\\1\\Chess.cs",
               "RelativeToolTip": "1\\Chess.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAB4AAAASAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACkAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-02T08:44:56.569Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Wimdow.cs",
               "DocumentMoniker": "C:\\roman\\CG\\lab6\\1\\1\\Wimdow.cs",
               "RelativeDocumentMoniker": "1\\Wimdow.cs",
               "ToolTip": "C:\\roman\\CG\\lab6\\1\\1\\Wimdow.cs",
               "RelativeToolTip": "1\\Wimdow.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABcAAAAAAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACoAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-02T08:40:43.054Z",
               "EditorCaption": ""
@@ -100,7 +96,7 @@
               "RelativeDocumentMoniker": "1\\Program.cs",
               "ToolTip": "C:\\roman\\CG\\lab6\\1\\1\\Program.cs",
               "RelativeToolTip": "1\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-02T08:40:34.336Z",
               "EditorCaption": ""

@@ -15,6 +15,8 @@ namespace _1
         private int[] displayLists = [];
         private MaterialLoader materialLoader = new();
 
+
+        
         public void LoadModel(string filePath)
         {
             AssimpContext importer = new AssimpContext();
@@ -22,7 +24,7 @@ namespace _1
                 filePath, 
                 PostProcessSteps.FlipUVs);
             importer.Dispose();
-            LoadTexturesAndMaterials();
+            LoadTextures();
             CreateDisplayLists();
         }
 
@@ -39,22 +41,14 @@ namespace _1
                 GL.NewList(displayLists[i], ListMode.Compile);
                 materialLoader.ApplyMaterial(scene.Materials[mesh.MaterialIndex], i);
 
-                
-
                 Vector3[] vertices = AssimpVectroToOpenTKVector([.. mesh.Vertices]);
                 Vector3[] normals = AssimpVectroToOpenTKVector([.. mesh.Normals]);
                 Vector3[] textureCoordinates = AssimpVectroToOpenTKVector([.. mesh.TextureCoordinateChannels[0]]);
 
                 if (mesh.Faces[0].IndexCount % 3 == 0)
-                {
                     GL.Begin(OpenTK.Graphics.OpenGL.PrimitiveType.Triangles);
-                }
                 else
-                {
                     GL.Begin(OpenTK.Graphics.OpenGL.PrimitiveType.Quads);
-                }
-
-                //GL.Begin(OpenTK.Graphics.OpenGL.PrimitiveType.Quads);
                 
                 for (int k = 0; k < vertices.Length; ++k)
                 {
@@ -70,7 +64,7 @@ namespace _1
             }
         }
 
-        private void LoadTexturesAndMaterials()
+        private void LoadTextures()
         {
             int meshCount = scene.MeshCount;
             materialLoader = new MaterialLoader();
@@ -104,7 +98,6 @@ namespace _1
                 vector3s[i].X = vecArr[i].X;
                 vector3s[i].Y = vecArr[i].Y;
                 vector3s[i].Z = vecArr[i].Z;
-
             }
 
             return vector3s;
