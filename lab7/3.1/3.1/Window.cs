@@ -81,6 +81,7 @@ namespace _3._1
                 uniform float progress;
                 uniform mat3 normalMatrix;
                 uniform mat4 modelMatrix;
+                uniform float step;
 
                 void main()
                 {
@@ -89,12 +90,12 @@ namespace _3._1
                     vec3 end_position = vec3(pos.x, pos.y, (pos.x * pos.x - pos.y * pos.y)/100);
                     vec3 morphed_position = mix(start_position, end_position, progress);
 
-                    vec2 pos_dx = vec2(position.x + 1.0, position.y);
+                    vec2 pos_dx = vec2(position.x + step, position.y);
                     vec3 start_position_dx = vec3(pos_dx.x, pos_dx.y, (pos_dx.x * pos_dx.x + pos_dx.y * pos_dx.y)/100);
                     vec3 end_position_dx = vec3(pos_dx.x, pos_dx.y, (pos_dx.x * pos_dx.x - pos_dx.y * pos_dx.y)/100);
                     vec3 morphed_position_dx = mix(start_position_dx, end_position_dx, progress);
 
-                    vec2 pos_dy = vec2(position.x, position.y + 1.0);
+                    vec2 pos_dy = vec2(position.x, position.y + step);
                     vec3 start_position_dy = vec3(pos_dy.x, pos_dy.y, (pos_dy.x * pos_dy.x + pos_dy.y * pos_dy.y)/100);
                     vec3 end_position_dy = vec3(pos_dy.x, pos_dy.y, (pos_dy.x * pos_dy.x - pos_dy.y * pos_dy.y)/100);
                     vec3 morphed_position_dy = mix(start_position_dy, end_position_dy, progress);
@@ -108,10 +109,6 @@ namespace _3._1
                     Normal = vec3(normalMatrix  * intermediateNormal);
                 }"
             );
-            //сделать через матрицу нормалей
-
-            //свет на modelview
-            //FragPos на modelview
 
             GL.CompileShader(vertexShader);
             GL.GetShader(vertexShader, ShaderParameter.CompileStatus, out int status);
@@ -129,9 +126,10 @@ namespace _3._1
                 vec3 lightPos = vec3(modelMatrix * vec4(000.0, 2000.0, 000.0, 0.0)); 
                 //vec3 lightPos = vec3(000.0, 1000.0, 000.0); 
                 vec3 lightDirection = normalize(lightPos - FragPos); 
-                vec3 normal = normalize(Normal); 
+                vec3 normal = (gl_FrontFacing ? 1.0 : -1.0) * normalize(Normal); 
 
-                float diffuse = max(dot(normal, lightDirection), 0.0); 
+                float diffuse = max(0.0, dot(normal, lightDirection)); 
+                float diffuseAbs = abs(diffuse); 
                 vec3 lightColor = vec3(1.0, 1.0, 1.0); 
                 vec3 objectColor = vec3(1.0, 0.0, 0.0); 
 
@@ -139,13 +137,10 @@ namespace _3._1
 
                 vec3 viewDir = normalize(-FragPos);
                 vec3 reflectDir = reflect(-lightDirection, normal);
-                float spec = pow(max(dot(viewDir, reflectDir), 0.0), 32);
+                float spec = pow(max(0.0, dot(viewDir, reflectDir)), 32);
                 vec3 specular = lightColor * spec;
 
-                //vec3 finalColor = (diffuse * objectColor) * lightColor;
-                vec3 finalColor = (ambient + diffuse * objectColor) * lightColor;
-                if(diffuse != 0.0) 
-                    finalColor += specular;
+                vec3 finalColor = (ambient + diffuseAbs * objectColor) * lightColor + specular;
 
                 FragColor = vec4(finalColor, 1.0); 
             }");
@@ -176,34 +171,30 @@ namespace _3._1
             base.OnRenderFrame(e);
             
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            //GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
             GL.UseProgram(shaderProgram);
 
             GL.GetFloat(GetPName.ModelviewMatrix, out Matrix4 modelMatrix);
-            GL.GetFloat(GetPName.ProjectionMatrix, out Matrix4 projectionMatrix);
-
-            var modelViewProjectionMatrix = projectionMatrix * modelMatrix;
             Matrix3 normalMatrix = new Matrix3(modelMatrix).Inverted();
             normalMatrix.Transpose();
 
-
+            float step = 1;
 
             GL.UniformMatrix3(GL.GetUniformLocation(shaderProgram, "normalMatrix"), false, ref normalMatrix);
             GL.UniformMatrix4(GL.GetUniformLocation(shaderProgram, "modelMatrix"), false, ref modelMatrix);
-            GL.UniformMatrix4(GL.GetUniformLocation(shaderProgram, "projectionMatrix"), false, ref projectionMatrix);
-            GL.UniformMatrix4(GL.GetUniformLocation(shaderProgram, "ModelViewProjectionMatrix"), false, ref modelViewProjectionMatrix);
             GL.Uniform1(GL.GetUniformLocation(shaderProgram, "progress"), progress);
-            GL.Color3(Color.Red);
+            GL.Uniform1(GL.GetUniformLocation(shaderProgram, "step"), step);
+
+
             GL.Begin(PrimitiveType.Quads);
-            for(int i = -50; i < 50; i++)
+            for(float i = -50; i < 50; i += step)
             {
-                for (int k = -50; k < 50; k++)
+                for (float k = -50; k < 50; k += step)
                 {
                     GL.Normal3(0f, 0f, 1f);
                     GL.Vertex3(i, k, 0.0f);
-                    GL.Vertex3(i+1, k, 0.0f);
-                    GL.Vertex3(i+1, k+1, 0.0f);
-                    GL.Vertex3(i, k+1, 0.0f);
+                    GL.Vertex3(i + step, k, 0.0f);
+                    GL.Vertex3(i + step, k + step, 0.0f);
+                    GL.Vertex3(i, k + step, 0.0f);
                 }
             }
 
