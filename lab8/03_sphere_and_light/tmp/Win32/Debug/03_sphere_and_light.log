@@ -1,0 +1,6 @@
+﻿  ConvexShape.cpp
+C:\roman\CG-course\cg-course\labs\08\samples\03_sphere_and_light\ConvexShape.cpp(43,21): warning C4018: <: несоответствие типов со знаком и без знака
+  (компиляция исходного файла "/ConvexShape.cpp")
+  
+AboutDlg.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/SAFESEH"
+  03_sphere_and_light.vcxproj -> C:\roman\CG-course\cg-course\labs\08\samples\Win32\Debug\03_sphere_and_light.exe
